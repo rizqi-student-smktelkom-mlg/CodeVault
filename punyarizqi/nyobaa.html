@@ -7,40 +7,98 @@
     <title>test</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .tanpabatas {
-            padding-right: 0px;
-            padding-left: 0px;
+        /* Efek blur */
+        .blur-bg {
+            position: relative;
+            overflow: hidden;
         }
-        .subjudul {
-            color: grey;
-            font-size: 10px;
+
+        .blur-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px);
+            z-index: -1;
         }
-        .header {
-            background-color: #f8b400;
+
+        /* Header */
+        #header {
+            position: relative;
             padding: 20px;
             text-align: center;
         }
+
+        #header.blur-bg::before {
+            background-image: url('image/download.jpg');
+        }
+
+        /* Sidebar Kiri */
+        #sidebar-left {
+            padding: 20px;
+        }
+
+        #sidebar-left.blur-bg::before {
+            background-image: url('image/Memes i found on internet.jpg');
+        }
+
+        /* Sidebar Kanan */
+        #sidebar-right {
+            padding: 20px;
+        }
+
+        #sidebar-right.blur-bg::before {
+            background-image: url('image/Memes i found on internet.jpg');
+        }
+
+        /* Konten Utama */
+        #content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #content.blur-bg::before {
+            background-image: url('image/Kucing abcd.jpg');
+        }
+
+        /* Footer */
+        #footer {
+            padding: 20px;
+            text-align: center;
+        }
+
+        #footer.blur-bg::before {
+            background-image: url('image/kenyang.jpg');
+        }
+
+        /* Style tambahan */
+        .gambar {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-text {
+            flex: 1;
+            padding: 20px;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
         .navbar-custom {
             background-color: #0d6efd;
-        }
-        .content {
-            background-color: #20c997;
-            padding: 20px;
-            min-height: 300px;
-        }
-        .sidebar {
-            background-color: #ffc107;
-            padding: 20px;
-            min-height: 300px;
-        }
-        .footer {
-            background-color: #6c757d;
-            padding: 20px;
-            text-align: center;
-        }
-        .gambar {
-            width: 250px;
-            height: 75%;
         }
     </style>
 </head>
@@ -48,9 +106,8 @@
 <body>
     <div class="container">
         <!-- Header -->
-        <div id="header" class="header text-white">
-            <h1>Header</h1>
-            <img class="gambar" src="image/download.jpg" alt="Header Image" class="img-fluid">
+        <div id="header" class="header blur-bg">
+            <img class="gambar" src="image/download.jpg" alt="Header Image">
         </div>
 
         <!-- Navbar -->
@@ -85,25 +142,209 @@
             </div>
         </nav>
 
-        <!-- Konten Utama -->
+        <!-- Konten -->
         <div class="row mt-3">
-            <div id="content" class="col-md-8 content text-white">
-                <h2>Ini ceritanya Konten Utama</h2>
-                <img class="gambar" src="image/Kucing abcd.jpg" alt="Content Image" class="img-fluid">
-                <p>ABCD</p>
+            <!-- Sidebar Kiri -->
+            <div id="sidebar-left" class="col-md-3 sidebar blur-bg">
+                <img class="gambar" src="image/Memes i found on internet.jpg" alt="Sidebar Left Image">
             </div>
-            <div id="sidebar" class="col-md-4 sidebar text-white">
-                <h2>Ini ceritanya Sidebar</h2>
-                <img class="gambar" src="image/Memes i found on internet.jpg" alt="Sidebar Image" class="img-fluid">
-                <p>Aku member, kau admin</p>
+
+            <!-- Konten Utama -->
+            <div id="content" class="col-md-6 content blur-bg">
+                <div class="content-text">
+                    <p>Perkenalkan kucing yang bernama kucing abcd dia selalu meneror orang yang sering mengeja alfabet</p>
+                </div>
+                <div class="content-img">
+                    <img class="gambar" src="image/Kucing abcd.jpg" alt="Content Image">
+                </div>
+            </div>
+
+            <!-- Sidebar Kanan -->
+            <div id="sidebar-right" class="col-md-3 sidebar blur-bg">
+                <<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Efek blur */
+        .blur-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blur-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px);
+            z-index: -1;
+        }
+
+        /* Header */
+        #header {
+            position: relative;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #header.blur-bg::before {
+            background-image: url('image/download.jpg');
+        }
+
+        /* Sidebar Kiri */
+        #sidebar-left {
+            padding: 20px;
+        }
+
+        #sidebar-left.blur-bg::before {
+            background-image: url('image/Memes i found on internet.jpg');
+        }
+
+        /* Sidebar Kanan */
+        #sidebar-right {
+            padding: 20px;
+        }
+
+        #sidebar-right.blur-bg::before {
+            background-image: url('image/Memes i found on internet.jpg');
+        }
+
+        /* Konten Utama */
+        #content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #content.blur-bg::before {
+            background-image: url('image/Kucing abcd.jpg');
+        }
+
+        /* Footer */
+        #footer {
+            padding: 20px;
+            text-align: center;
+        }
+
+        #footer.blur-bg::before {
+            background-image: url('image/kenyang.jpg');
+        }
+
+        /* Style tambahan */
+        .gambar {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .content-text {
+            flex: 1;
+            padding: 20px;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar-custom {
+            background-color: #0d6efd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div id="header" class="header blur-bg">
+            <img class="gambar" src="image/download.jpg" alt="Header Image">
+        </div>
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <a class="navbar-brand text-white" href="#">ini navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#header">Header</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#content">Konten Utama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#sidebar">Sidebar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#footer">Footer</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Konten -->
+        <div class="row mt-3">
+            <!-- Sidebar Kiri -->
+            <div id="sidebar-left" class="col-md-3 sidebar blur-bg">
+                <img class="gambar" src="image/Memes i found on internet.jpg" alt="Sidebar Left Image">
+            </div>
+
+            <!-- Konten Utama -->
+            <div id="content" class="col-md-6 content blur-bg">
+                <div class="content-text">
+                    <p>Perkenalkan kucing yang bernama kucing abcd dia selalu meneror orang yang sering mengeja alfabet</p>
+                </div>
+                <div class="content-img">
+                    <img class="gambar" src="image/Kucing abcd.jpg" alt="Content Image">
+                </div>
+            </div>
+
+            <!-- Sidebar Kanan -->
+            <div id="sidebar-right" class="col-md-3 sidebar blur-bg">
+                <img class="gambar" src="image/Memes i found on internet.jpg" alt="Sidebar Right Image">
             </div>
         </div>
 
         <!-- Footer -->
-        <div id="footer" class="footer text-white mt-3">
-            <h2>Ini ceritanya Footer</h2>
-            <img class="gambar" src="image/kenyang.jpg" alt="Footer Image" class="img-fluid">
-            <p>Senjata makan tuan &copy; 2025</p>
+        <div id="footer" class="footer blur-bg mt-3">
+            <img class="gambar" src="image/kenyang.jpg" alt="Footer Image">
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+img class="gambar" src="image/Memes i found on internet.jpg" alt="Sidebar Right Image">
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer" class="footer blur-bg mt-3">
+            <img class="gambar" src="image/kenyang.jpg" alt="Footer Image">
         </div>
     </div>
 
